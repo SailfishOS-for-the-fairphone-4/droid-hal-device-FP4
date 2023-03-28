@@ -412,7 +412,7 @@ if [ "$BUILDIMAGE" = "1" ]; then
             --tokenmap=$tokenmap \
             --record-pkgs=name,url \
             --outdir=$imgname \
-            --pack-to=sfe-$DEVICE-$RELEASE"$EXTRA_NAME".tar.bz2 \
+            --pack-to=sfe-$DEVICE-$RELEASE"$EXTRA_NAME".gz \
             "$ANDROID_ROOT"/$ks
     else
         sudo mic create loop --arch=$PORT_ARCH \
