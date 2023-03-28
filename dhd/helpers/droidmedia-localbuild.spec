@@ -71,8 +71,8 @@ cp external/droidmedia/init/*.rc \
    $RPM_BUILD_ROOT/%{_libexecdir}/droid-hybris/system/etc/init/
 fi
 
-if [ -f out/target/product/@DEVICE@/system/etc/init/hybris_extras.rc ]; then
-cp out/target/product/@DEVICE@/system/etc/init/hybris_extras.rc \
+if [ -f $ANDROID_ROOT/out/target/product/@DEVICE@/system/etc/init/hybris_extras.rc ]; then
+cp $ANDROID_ROOT/out/target/product/@DEVICE@/system/etc/init/hybris_extras.rc \
    $RPM_BUILD_ROOT/%{_libexecdir}/droid-hybris/system/etc/init/
 fi
 
@@ -83,7 +83,9 @@ echo %{_libexecdir}/droid-hybris/system/$DROIDLIB/libdroidmedia.so >> ${LIBDMSOL
 echo %{_libexecdir}/droid-hybris/system/$DROIDLIB/libminisf.so >> ${LIBDMSOLOC}
 
 if [ -d $RPM_BUILD_ROOT/%{_libexecdir}/droid-hybris/system/etc/init ]; then
-echo %{_libexecdir}/droid-hybris/system/etc/init/*.rc >> ${LIBDMSOLOC}
+echo %{_libexecdir}/droid-hybris/system/etc/init/minimediaservice.rc >> ${LIBDMSOLOC}
+echo %{_libexecdir}/droid-hybris/system/etc/init/minisfservice.rc >> ${LIBDMSOLOC}
+echo %{_libexecdir}/droid-hybris/system/etc/init/hybris_extras.rc >> ${LIBDMSOLOC}
 fi
 
 %files -f file.list
