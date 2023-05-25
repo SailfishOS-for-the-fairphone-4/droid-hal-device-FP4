@@ -9,6 +9,7 @@
 %define droid_target_aarch64 1 
 %define installable_zip 1
 
+%define makefstab_skip_entries /system /system_ext /product /vendor
 %define straggler_files \
    /bugreports \
    /cache \
